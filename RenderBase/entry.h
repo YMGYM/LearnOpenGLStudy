@@ -39,7 +39,7 @@ protected:
 	unsigned int ShaderCompile(const char* shaderSource, const int shaderType);
 
 	virtual void PreRenderFunc() = 0;
-	void PrepareObjectBuffer(float vertices[], unsigned int indices[], int verticesSize, int indicesSize);
+	virtual void PrepareObjectBuffer(float vertices[], unsigned int indices[], int verticesSize, int indicesSize);
 
 	virtual void RenderLoopFunc() = 0;
 };

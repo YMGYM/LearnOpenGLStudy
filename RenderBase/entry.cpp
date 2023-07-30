@@ -93,6 +93,8 @@ int OpenGLRenderEntry::LoadShader() {
 	this->vertexShader = ShaderCompile(vertexShaderSource, GL_VERTEX_SHADER);
 	this->fragmentShader = ShaderCompile(fragmentShaderSource, GL_FRAGMENT_SHADER);
 
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
 	glLinkProgram(shaderProgram);
 
 	int success;
@@ -129,8 +131,6 @@ unsigned int OpenGLRenderEntry::ShaderCompile(const char* shaderSource, const in
 		return -1;
 	}
 
-	glAttachShader(shaderProgram, targetShader);
-
 	return targetShader;
 }
 
@@ -151,12 +151,14 @@ void OpenGLRenderEntry::PrepareObjectBuffer(float vertices[], unsigned int indic
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0); // Vertex 배열을 읽는 법을 지정합니다.
 	glEnableVertexAttribArray(0); // Vertex Attrib Pointer를 Enable합니다.
 
-	// EBO
-	glGenBuffers(1, &this->EBO);
+	if (indices != nullptr) {
+		// EBO
+		glGenBuffers(1, &this->EBO);
 
-	// 이 시점에서 GL_ARRAY_BUFFER는 GL_ELEMENT_ARRAY_BUFFER 바인딩 정보를 저장하고 있다.
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indicesSize, indices, GL_STATIC_DRAW);
+		// 이 시점에서 GL_ARRAY_BUFFER는 GL_ELEMENT_ARRAY_BUFFER 바인딩 정보를 저장하고 있다.
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, this->EBO);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indicesSize, indices, GL_STATIC_DRAW);
+	}
 }
 
 
