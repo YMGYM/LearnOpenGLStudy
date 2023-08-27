@@ -36,4 +36,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Chapter2\defaultFragmentShader.fs">
+      <Filter>소스 파일</Filter>
+    </None>
+    <None Include="..\Chapter2\defaultVertexShader.vs">
+      <Filter>소스 파일</Filter>
+    </None>
+  </ItemGroup>
 </Project>

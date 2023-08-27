@@ -140,6 +140,10 @@
     <ClInclude Include="RenderBase.h" />
     <ClInclude Include="Shader.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Chapter2\defaultFragmentShader.fs" />
+    <None Include="..\Chapter2\defaultVertexShader.vs" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

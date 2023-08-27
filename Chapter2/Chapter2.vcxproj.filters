@@ -27,5 +27,16 @@
     <ClCompile Include="shadersInterpolation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="shadersInterpolationClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InterpolationFShader.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="InterpolationVShader.vs">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

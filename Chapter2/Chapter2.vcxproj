@@ -138,12 +138,17 @@
     <ClCompile Include="..\..\src\glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shadersInterpolation.cpp" />
+    <ClCompile Include="shadersInterpolationClass.cpp" />
     <ClCompile Include="shadersUniform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RenderBase\RenderBase.vcxproj">
       <Project>{318a2ff5-0449-49c3-973f-ce91a4c1b449}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InterpolationFShader.fs" />
+    <None Include="InterpolationVShader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
