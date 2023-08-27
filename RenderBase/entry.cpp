@@ -92,54 +92,64 @@ GLFWwindow* OpenGLRenderEntry::GLFWInitialize(int width, int height) {
 
 int OpenGLRenderEntry::LoadShader() {
 	/* 이하 사용하지 않습니다. (Chaper 1 에서 사용했던 코드) */
-	/*if (!defaultVertexPath || !defaultFragmentPath) {
-		const char* vertexShaderSource = "#version 330 core\n"
-			"layout (location = 0) in vec3 aPos;\n"
-			"void main()\n"
-			"{\n"
-			"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-			"}\0";
+	{
+		/*if (!defaultVertexPath || !defaultFragmentPath) {
+			const char* vertexShaderSource = "#version 330 core\n"
+				"layout (location = 0) in vec3 aPos;\n"
+				"void main()\n"
+				"{\n"
+				"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+				"}\0";
 
-		const char* fragmentShaderSource = "#version 330 core\n"
-			"out vec4 FragColor;\n"
-			"void main()\n"
-			"{\n"
-			"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-			"}\0";
+			const char* fragmentShaderSource = "#version 330 core\n"
+				"out vec4 FragColor;\n"
+				"void main()\n"
+				"{\n"
+				"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+				"}\0";
 
-		this->shaderProgram = glCreateProgram();
-		this->vertexShader = ShaderCompile(vertexShaderSource, GL_VERTEX_SHADER);
-		this->fragmentShader = ShaderCompile(fragmentShaderSource, GL_FRAGMENT_SHADER);
+			this->shaderProgram = glCreateProgram();
+			this->vertexShader = ShaderCompile(vertexShaderSource, GL_VERTEX_SHADER);
+			this->fragmentShader = ShaderCompile(fragmentShaderSource, GL_FRAGMENT_SHADER);
 
-		glAttachShader(shaderProgram, vertexShader);
-		glAttachShader(shaderProgram, fragmentShader);
-		glLinkProgram(shaderProgram);
+			glAttachShader(shaderProgram, vertexShader);
+			glAttachShader(shaderProgram, fragmentShader);
+			glLinkProgram(shaderProgram);
 
-		int success;
-		char infoLog[512];
-		glGetShaderiv(shaderProgram, GL_COMPILE_STATUS, &success);
+			int success;
+			char infoLog[512];
+			glGetShaderiv(shaderProgram, GL_COMPILE_STATUS, &success);
 
-		if (!success) {
-			glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-			std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+			if (!success) {
+				glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+				std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
 
-			return -1;
+				return -1;
+			}
+			this->shaderMode = ShaderMode::SOURCE;
 		}
-		this->shaderMode = ShaderMode::SOURCE;
+		else
+		{
+			// Vertex Shader나 Fragment Shader가 제공되지 않으면. 기본 코드를 실행
+			this->shaderClass = new Shader(defaultVertexPath, defaultFragmentPath);
+			this->shaderMode = ShaderMode::CLASS;
+		}
+
+		return 0;
+		*/
+	}
+
+	// Vertex Shader나 Fragment Shader가 제공되지 않으면. 기본 코드를 실행
+	// MEMO: 현재 Shader Class의 디자인 상 vs와 fs는 동시에 제공되어야 합니다.
+	if (!vertexPath || !fragmentPath)
+	{
+		this->shaderClass = new Shader(defaultVertexPath, defaultFragmentPath);
 	}
 	else
 	{
-		// Vertex Shader나 Fragment Shader가 제공되지 않으면. 기본 코드를 실행
-		this->shaderClass = new Shader(defaultVertexPath, defaultFragmentPath);
-		this->shaderMode = ShaderMode::CLASS;
+		this->shaderClass = new Shader(vertexPath, fragmentPath);
+
 	}
-
-	return 0;
-	*/
-
-	// Vertex Shader나 Fragment Shader가 제공되지 않으면. 기본 코드를 실행
-	// TODO: 별도의 단일 쉐이더로 구동하는 것 
-	this->shaderClass = new Shader(defaultVertexPath, defaultFragmentPath);
 	this->shaderMode = ShaderMode::CLASS;
 
 	return 0;
@@ -149,6 +159,7 @@ int OpenGLRenderEntry::LoadShader() {
 unsigned int OpenGLRenderEntry::ShaderCompile(const char* shaderSource, const int shaderType) {
 	/*
 	* Chaper1, 2에서 Source를 통해 하드코딩 된 Shader를 넣을 때 사용합니다.
+	* 이 함수를 직접적으로 재사용하는 부분이 있으므로 LoadShader가 주석처리 되어도 이 함수는 주석처리 하면 안 됩니다.
 	*/
 	int success;
 	char infoLog[512];

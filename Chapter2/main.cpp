@@ -1,11 +1,13 @@
-//#include "shadersUniform.cpp"
+#include "shadersUniform.cpp"
 #include "shadersInterpolation.cpp"
-//#include "shadersInterpolationClass.cpp"
+#include "shadersInterpolationClass.cpp"
+#include "shadersUniformClass.cpp"
 
 int main() {
-	/*OpenGLRenderEntry* entryPoint = new UniformShaderRenderer();*/
-	OpenGLRenderEntry* entryPoint = new ShadersInterpolationRenderer();
+	//OpenGLRenderEntry* entryPoint = new UniformShaderRenderer();
+	//OpenGLRenderEntry* entryPoint = new ShadersInterpolationRenderer();
 	//OpenGLRenderEntry* entryPoint = new ShadersInterpolationClassRenderer();
+	OpenGLRenderEntry* entryPoint = new UniformShaderClassRenderer();
 
 	entryPoint->SetViewPortClearColor({ 1.0f, 1.0f, 1.0f, 1.0f });
 
@@ -15,7 +17,8 @@ int main() {
 
 	entryPoint->StartRender();
 
-	entryPoint->Finalize();
+	delete entryPoint;
+	entryPoint = nullptr;
 
 	return 0;
 }

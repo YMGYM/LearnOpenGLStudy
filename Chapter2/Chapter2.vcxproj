@@ -140,6 +140,7 @@
     <ClCompile Include="shadersInterpolation.cpp" />
     <ClCompile Include="shadersInterpolationClass.cpp" />
     <ClCompile Include="shadersUniform.cpp" />
+    <ClCompile Include="shadersUniformClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RenderBase\RenderBase.vcxproj">
@@ -149,6 +150,8 @@
   <ItemGroup>
     <None Include="InterpolationFShader.fs" />
     <None Include="InterpolationVShader.vs" />
+    <None Include="UniformFShader.fs" />
+    <None Include="UniformVShader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

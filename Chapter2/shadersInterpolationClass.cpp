@@ -1,8 +1,6 @@
 #include "RenderBase/entry.h"
 
 class ShadersInterpolationClassRenderer : public OpenGLRenderEntry {
-	Shader shaderProgram2;
-
 	void PrepareObjectBuffer(float vertices[], unsigned int indices[], int verticesSize, int indicesSize) {  // override
 		glGenBuffers(1, &this->VBO);
 
@@ -27,12 +25,11 @@ class ShadersInterpolationClassRenderer : public OpenGLRenderEntry {
 		};
 
 		PrepareObjectBuffer(vertices, nullptr, sizeof(vertices), 0);
-		
-		shaderProgram2 = Shader("Chapter2/InterpolationVShader.vs", "Chapter2/InterpolationFShader.fs");
+		SetVertexPath("InterpolationVShader.vs");
+		SetFragmentPath("InterpolationFShader.fs");
 	}
 
 	void  OpenGLRenderEntry::RenderLoopFunc() {
-		shaderProgram2.use();
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 };

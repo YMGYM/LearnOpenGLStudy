@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\ShaderFiles">
+      <UniqueIdentifier>{ecebb7da-1478-4995-a919-df1b99200f7d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="shadersUniform.cpp">
@@ -30,13 +33,22 @@
     <ClCompile Include="shadersInterpolationClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="shadersUniformClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="InterpolationFShader.fs">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\ShaderFiles</Filter>
     </None>
     <None Include="InterpolationVShader.vs">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="UniformFShader.fs">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="UniformVShader.vs">
+      <Filter>Source Files\ShaderFiles</Filter>
     </None>
   </ItemGroup>
 </Project>

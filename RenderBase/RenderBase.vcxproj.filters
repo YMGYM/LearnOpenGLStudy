@@ -37,10 +37,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Chapter2\defaultFragmentShader.fs">
+    <None Include="defaultFragmentShader.fs">
       <Filter>소스 파일</Filter>
     </None>
-    <None Include="..\Chapter2\defaultVertexShader.vs">
+    <None Include="defaultVertexShader.vs">
       <Filter>소스 파일</Filter>
     </None>
   </ItemGroup>

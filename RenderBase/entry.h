@@ -27,18 +27,25 @@ public:
 
 	void SetViewPortClearColor(ViewPortRGBA newColor) { this->viewPortClearColor = newColor; }
 
+	void SetVertexPath(const char* vertexPathStr) { this->vertexPath = vertexPathStr; }
+	void SetFragmentPath(const char* fragmentPathStr) { this->fragmentPath = fragmentPathStr; }
+
 protected:
 	/* 내부 사용 변수들*/
 	GLFWwindow* currentWindow; // 현재 열려 있는 창
 	ViewPortRGBA viewPortClearColor = { 0.2f, 0.3f, 0.3f, 1.0f }; // Viewport의 기본 초기화 색상. 필요시 override 하세요.
 
-	// TODO: 상대 경로 변환
 	// Default Vertex Shader
 	const char* defaultVertexPath = "../RenderBase/defaultVertexShader.vs";
 	// Default Fragment Shader
 	const char* defaultFragmentPath = "../RenderBase/defaultFragmentShader.fs";
+	
+	// User Defined Vertex Shader
+	const char* vertexPath = nullptr;
+	// User Defined Fragment Shader
+	const char* fragmentPath = nullptr;
 
-	Shader* shaderClass;  // TODO: 생성 시점 어디로?
+	Shader* shaderClass;
 	ShaderMode shaderMode = ShaderMode::NOTINITIALIZED;
 
 	unsigned int VBO;
