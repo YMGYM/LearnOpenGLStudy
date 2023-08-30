@@ -36,6 +36,15 @@
     <ClCompile Include="shadersUniformClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="exercise1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exercise2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exercise3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="InterpolationFShader.fs">
@@ -48,6 +57,24 @@
       <Filter>Source Files\ShaderFiles</Filter>
     </None>
     <None Include="UniformVShader.vs">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="Exercise1VShader.vs">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="Exercise1FShader.fs">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="Exercise2VShader.vs">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="Exercise2FShader.fs">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="Exercise3FShader.fs">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="Exercise3VShader.vs">
       <Filter>Source Files\ShaderFiles</Filter>
     </None>
   </ItemGroup>

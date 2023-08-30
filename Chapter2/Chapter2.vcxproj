@@ -136,6 +136,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\glad.c" />
+    <ClCompile Include="exercise1.cpp" />
+    <ClCompile Include="exercise2.cpp" />
+    <ClCompile Include="exercise3.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shadersInterpolation.cpp" />
     <ClCompile Include="shadersInterpolationClass.cpp" />
@@ -148,6 +151,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Exercise1FShader.fs" />
+    <None Include="Exercise1VShader.vs" />
+    <None Include="Exercise2FShader.fs" />
+    <None Include="Exercise2VShader.vs" />
+    <None Include="Exercise3FShader.fs" />
+    <None Include="Exercise3VShader.vs" />
     <None Include="InterpolationFShader.fs" />
     <None Include="InterpolationVShader.vs" />
     <None Include="UniformFShader.fs" />
