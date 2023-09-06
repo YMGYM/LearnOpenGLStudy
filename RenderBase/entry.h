@@ -19,7 +19,7 @@ struct ViewPortRGBA {
 
 class OpenGLRenderEntry {
 public:
-	~OpenGLRenderEntry();
+	virtual ~OpenGLRenderEntry();
 
 	int Initialize(const int width, const int height);
 	void StartRender();

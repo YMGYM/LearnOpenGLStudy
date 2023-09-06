@@ -18,7 +18,8 @@ int main() {
 
 	entryPoint->StartRender();
 
-	entryPoint->Finalize();
+	//entryPoint->Finalize();
+	delete entryPoint;
 
 	return 0;
 }
