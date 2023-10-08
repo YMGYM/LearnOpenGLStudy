@@ -15,8 +15,8 @@ class BasicTextureRenderer : public OpenGLRenderEntry {
 		// texture 기타 설정들
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);  // scale down
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);  // scale up
 
 		// Load Image
 		int width, height, nrChannels;
@@ -52,7 +52,7 @@ class BasicTextureRenderer : public OpenGLRenderEntry {
 		//OpenGL은 VAO 가 없으면 그리지 않음. Buffer에 대한 바인딩 정보를 갖고 있는 오브젝트
 		glGenVertexArrays(1, &this->VAO);
 
-		// VAO에 VOB 바인드
+		// VAO에 VBO 바인드
 		glBindVertexArray(this->VAO);
 
 		glBindBuffer(GL_ARRAY_BUFFER, this->VBO); // 버퍼 유형을 Binding 한다. (GL_ARRAY_BUFFER 를 사용할 때마다 VBO를 사용하겠다)
