@@ -1,11 +1,13 @@
 #define STB_IMAGE_IMPLEMENTATION
 // 이상하게 이게 여기 있어야 링킹에 성공함. (고민 필요)
 
-#include "BasicTecture.cpp"
+//#include "BasicTecture.cpp"
+#include "TextureUnits.cpp"
 
 
 int main() {
-	OpenGLRenderEntry* entryPoint = new BasicTextureRenderer();
+	//OpenGLRenderEntry* entryPoint = new BasicTextureRenderer();
+	OpenGLRenderEntry* entryPoint = new TextureUnitRenderer();
 
 	entryPoint->SetViewPortClearColor({ 1.0f, 1.0f, 1.0f, 1.0f });
 

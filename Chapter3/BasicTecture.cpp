@@ -20,7 +20,7 @@ class BasicTextureRenderer : public OpenGLRenderEntry {
 
 		// Load Image
 		int width, height, nrChannels;
-		unsigned char* data = stbi_load("../Chapter3/container.jpg", &width, &height, &nrChannels, 3);
+   		unsigned char* data = stbi_load("../Chapter3/container.jpg", &width, &height, &nrChannels, 3);  // container.jpg로 표현해도 되지만, 향후 다른 챕터에서 쓸 때 불필요한 디버깅 방지용으로 ../Chapter3 작성
 
 		if (data)
 		{
@@ -52,7 +52,7 @@ class BasicTextureRenderer : public OpenGLRenderEntry {
 		//OpenGL은 VAO 가 없으면 그리지 않음. Buffer에 대한 바인딩 정보를 갖고 있는 오브젝트
 		glGenVertexArrays(1, &this->VAO);
 
-		// VAO에 VBO 바인드
+		// VAO 사용 시작
 		glBindVertexArray(this->VAO);
 
 		glBindBuffer(GL_ARRAY_BUFFER, this->VBO); // 버퍼 유형을 Binding 한다. (GL_ARRAY_BUFFER 를 사용할 때마다 VBO를 사용하겠다)

@@ -138,10 +138,12 @@
   <ItemGroup>
     <ClCompile Include="BasicTecture.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TextureUnits.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BasicTextureFShader.frag" />
     <None Include="BasicTextureVShader.vert" />
+    <None Include="TextureUnitFShader.frag" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicTexture.h" />

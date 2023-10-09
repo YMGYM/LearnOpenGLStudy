@@ -24,12 +24,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TextureUnits.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="BasicTextureVShader.vert">
       <Filter>Source Files\ShaderFiles</Filter>
     </None>
     <None Include="BasicTextureFShader.frag">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="TextureUnitFShader.frag">
       <Filter>Source Files\ShaderFiles</Filter>
     </None>
   </ItemGroup>
