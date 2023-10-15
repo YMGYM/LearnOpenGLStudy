@@ -137,12 +137,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicTecture.cpp" />
+    <ClCompile Include="exercise1.cpp" />
+    <ClCompile Include="exercise2.cpp" />
+    <ClCompile Include="exercise3.cpp" />
+    <ClCompile Include="exercise4.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TextureUnits.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BasicTextureFShader.frag" />
     <None Include="BasicTextureVShader.vert" />
+    <None Include="Exercise1FShader.frag" />
+    <None Include="Exercise4FShader.frag" />
     <None Include="TextureUnitFShader.frag" />
   </ItemGroup>
   <ItemGroup>

@@ -27,6 +27,18 @@
     <ClCompile Include="TextureUnits.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="exercise1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exercise2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exercise3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="exercise4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="BasicTextureVShader.vert">
@@ -36,6 +48,12 @@
       <Filter>Source Files\ShaderFiles</Filter>
     </None>
     <None Include="TextureUnitFShader.frag">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="Exercise1FShader.frag">
+      <Filter>Source Files\ShaderFiles</Filter>
+    </None>
+    <None Include="Exercise4FShader.frag">
       <Filter>Source Files\ShaderFiles</Filter>
     </None>
   </ItemGroup>

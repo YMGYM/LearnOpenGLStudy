@@ -54,7 +54,8 @@ protected:
 
 	/* 유틸리티 함수 */
 	void processInput(GLFWwindow* window);
-
+	virtual void RenderKeyUpCallback() {};
+	virtual void RenderKeyDownCallback() {};
 
 	GLFWwindow* GLFWInitialize(const int width, const int height);
 
